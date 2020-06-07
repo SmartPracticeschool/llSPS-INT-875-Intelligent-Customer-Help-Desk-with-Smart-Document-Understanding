@@ -1,0 +1,1180 @@
+
+
+event_name": "input",
+
+
+      "dialog_node": "handler_13_1522596437268",
+
+
+      "previous_sibling": "handler_14_1522596437268"
+
+
+    },
+
+
+    {
+
+
+      "type": "event_handler",
+
+
+      "output": {},
+
+
+      "parent": "slot_12_1522596437268",
+
+
+      "event_name": "focus",
+
+
+      "dialog_node": "handler_14_1522596437268"
+
+
+    },
+
+
+    {
+
+
+      "type": "event_handler",
+
+
+      "output": {},
+
+
+      "parent": "slot_105_1498132552870",
+
+
+      "context": {
+
+
+        "time": "@sys-time"
+
+
+      },
+
+
+      "metadata": {},
+
+
+      "conditions": "@sys-time",
+
+
+      "event_name": "input",
+
+
+      "dialog_node": "handler_106_1498132552870",
+
+
+      "previous_sibling": "handler_107_1498132552870"
+
+
+    },
+
+
+    {
+
+
+      "type": "event_handler",
+
+
+      "output": {
+
+
+        "text": {
+
+
+          "values": [
+
+
+            "We only accept appointments between 11am and 5pm"
+
+
+          ]
+
+
+        }
+
+
+      },
+
+
+      "parent": "slot_105_1498132552870",
+
+
+      "metadata": {},
+
+
+      "next_step": {
+
+
+        "behavior": "reprompt"
+
+
+      },
+
+
+      "conditions": "$time.after('17:30:30') || $time.before('10:59:59')",
+
+
+      "event_name": "filled",
+
+
+      "dialog_node": "handler_1_1509694458589",
+
+
+      "previous_sibling": "handler_106_1498132552870"
+
+
+    },
+
+
+    {
+
+
+      "type": "event_handler",
+
+
+      "output": {
+
+
+        "text": "What time on <? $date.reformatDateTime(\"EEEEE\") ?> do you want to come in?"
+
+
+      },
+
+
+      "parent": "slot_105_1498132552870",
+
+
+      "metadata": {},
+
+
+      "event_name": "focus",
+
+
+      "dialog_node": "handler_107_1498132552870"
+
+
+    },
+
+
+    {
+
+
+      "type": "event_handler",
+
+
+      "output": {},
+
+
+      "parent": "slot_22_1522444583114",
+
+
+      "context": {
+
+
+        "phone": "@phone"
+
+
+      },
+
+
+      "metadata": {},
+
+
+      "conditions": "@phone",
+
+
+      "event_name": "input",
+
+
+      "dialog_node": "handler_23_1522444583114",
+
+
+      "previous_sibling": "handler_24_1522444583114"
+
+
+    },
+
+
+    {
+
+
+      "type": "event_handler",
+
+
+      "output": {
+
+
+        "text": {
+
+
+          "values": [
+
+
+            "Thanks"
+
+
+          ],
+
+
+          "selection_policy": "sequential"
+
+
+        }
+
+
+      },
+
+
+      "parent": "slot_22_1522444583114",
+
+
+      "context": {},
+
+
+      "metadata": {},
+
+
+      "conditions": "true",
+
+
+      "event_name": "filled",
+
+
+      "dialog_node": "handler_22_1522598191131",
+
+
+      "previous_sibling": "handler_23_1522444583114"
+
+
+    },
+
+
+    {
+
+
+      "type": "event_handler",
+
+
+      "output": {
+
+
+        "text": "I'll just need a phone to hold your reservation"
+
+
+      },
+
+
+      "parent": "slot_22_1522444583114",
+
+
+      "metadata": {},
+
+
+      "event_name": "focus",
+
+
+      "dialog_node": "handler_24_1522444583114"
+
+
+    },
+
+
+    {
+
+
+      "type": "event_handler",
+
+
+      "output": {},
+
+
+      "parent": "slot_102_1498132501942",
+
+
+      "context": {
+
+
+        "date": "@sys-date"
+
+
+      },
+
+
+      "metadata": {},
+
+
+      "conditions": "@sys-date",
+
+
+      "event_name": "input",
+
+
+      "dialog_node": "handler_103_1498132501942",
+
+
+      "previous_sibling": "handler_104_1498132501942"
+
+
+    },
+
+
+    {
+
+
+      "type": "event_handler",
+
+
+      "output": {
+
+
+        "text": {
+
+
+          "values": [
+
+
+            "Looks like you're trying to make a reservation in the past. Try again."
+
+
+          ]
+
+
+        }
+
+
+      },
+
+
+      "parent": "slot_102_1498132501942",
+
+
+      "metadata": {},
+
+
+      "next_step": {
+
+
+        "behavior": "reprompt"
+
+
+      },
+
+
+      "conditions": "$date.before(now())",
+
+
+      "event_name": "filled",
+
+
+      "dialog_node": "handler_6_1509695999145",
+
+
+      "previous_sibling": "handler_103_1498132501942"
+
+
+    },
+
+
+    {
+
+
+      "type": "event_handler",
+
+
+      "output": {
+
+
+        "text": "What day would you like to come in?"
+
+
+      },
+
+
+      "parent": "slot_102_1498132501942",
+
+
+      "metadata": {},
+
+
+      "event_name": "focus",
+
+
+      "dialog_node": "handler_104_1498132501942"
+
+
+    },
+
+
+    {
+
+
+      "type": "response_condition",
+
+
+      "output": {
+
+
+        "generic": [
+
+
+          {
+
+
+            "values": [
+
+
+              {
+
+
+                "text": "Try again later"
+
+
+              }
+
+
+            ],
+
+
+            "response_type": "text",
+
+
+            "selection_policy": "sequential"
+
+
+          }
+
+
+        ]
+
+
+      },
+
+
+      "parent": "node_5_1589557930308",
+
+
+      "conditions": "anything_else",
+
+
+      "dialog_node": "response_6_1589557975747",
+
+
+      "previous_sibling": "response_10_1589557972303"
+
+
+    },
+
+
+    {
+
+
+      "type": "response_condition",
+
+
+      "output": {
+
+
+        "generic": [
+
+
+          {
+
+
+            "values": [
+
+
+              {
+
+
+                "text": "\"<?$webhook_result_1.passages[0].passage_text?>\""
+
+
+              }
+
+
+            ],
+
+
+            "response_type": "text",
+
+
+            "selection_policy": "sequential"
+
+
+          }
+
+
+        ]
+
+
+      },
+
+
+      "parent": "node_5_1589557930308",
+
+
+      "conditions": "$webhook_result_1",
+
+
+      "dialog_node": "response_10_1589557972303"
+
+
+    },
+
+
+    {
+
+
+      "type": "standard",
+
+
+      "title": "What are your hours?",
+
+
+      "output": {},
+
+
+      "metadata": {},
+
+
+      "next_step": {
+
+
+        "behavior": "jump_to",
+
+
+        "selector": "body",
+
+
+        "dialog_node": "node_3_1522439390442"
+
+
+      },
+
+
+      "conditions": "#Customer_Care_Store_Hours",
+
+
+      "digress_in": "does_not_return",
+
+
+      "dialog_node": "Hours of Operation",
+
+
+      "digress_out": "allow_all",
+
+
+      "previous_sibling": "Opening"
+
+
+    },
+
+
+    {
+
+
+      "type": "standard",
+
+
+      "title": "Ask about product",
+
+
+      "actions": [
+
+
+        {
+
+
+          "name": "main_webhook",
+
+
+          "type": "webhook",
+
+
+          "parameters": {
+
+
+            "input": "<?input.text?>"
+
+
+          },
+
+
+          "result_variable": "webhook_result_1"
+
+
+        }
+
+
+      ],
+
+
+      "metadata": {
+
+
+        "_customization": {
+
+
+          "mcr": true
+
+
+        }
+
+
+      },
+
+
+      "conditions": "#Product_Information",
+
+
+      "dialog_node": "node_5_1589557930308",
+
+
+      "previous_sibling": "node_4_1570050459690"
+
+
+    },
+
+
+    {
+
+
+      "type": "standard",
+
+
+      "title": "Please transfer me to an agent",
+
+
+      "output": {
+
+
+        "text": {
+
+
+          "values": [
+
+
+            "Would you like me to transfer you to a representative?"
+
+
+          ],
+
+
+          "selection_policy": "sequential"
+
+
+        }
+
+
+      },
+
+
+      "metadata": {},
+
+
+      "conditions": "#General_Connect_to_Agent",
+
+
+      "digress_in": "does_not_return",
+
+
+      "dialog_node": "node_22_1467833484410",
+
+
+      "digress_out": "allow_all_never_return",
+
+
+      "previous_sibling": "node_2_1468243505617"
+
+
+    },
+
+
+    {
+
+
+      "type": "standard",
+
+
+      "output": {
+
+
+        "text": {
+
+
+          "values": [
+
+
+            "So long",
+
+
+            "See ya",
+
+
+            "Good bye"
+
+
+          ],
+
+
+          "selection_policy": "sequential"
+
+
+        }
+
+
+      },
+
+
+      "metadata": {},
+
+
+      "conditions": "#Goodbye",
+
+
+      "digress_in": "does_not_return",
+
+
+      "dialog_node": "node_12_1468329566917",
+
+
+      "previous_sibling": "node_13_1502484041694"
+
+
+    },
+
+
+    {
+
+
+      "type": "standard",
+
+
+      "output": {},
+
+
+      "metadata": {},
+
+
+      "conditions": "#General_Greetings",
+
+
+      "digress_in": "does_not_return",
+
+
+      "dialog_node": "node_13_1502484041694",
+
+
+      "previous_sibling": "Reservation using slots"
+
+
+    },
+
+
+    {
+
+
+      "type": "standard",
+
+
+      "title": "What can I do",
+
+
+      "output": {
+
+
+        "generic": [
+
+
+          {
+
+
+            "values": [
+
+
+              {
+
+
+                "text": "I can tell you about our store locations and opening hours, or help you set up an appointment."
+
+
+              },
+
+
+              {
+
+
+                "text": "You could also ask me to connect you to an agent."
+
+
+              }
+
+
+            ],
+
+
+            "response_type": "text",
+
+
+            "selection_policy": "sequential"
+
+
+          }
+
+
+        ]
+
+
+      },
+
+
+      "conditions": "#Help",
+
+
+      "dialog_node": "node_4_1570050459690",
+
+
+      "previous_sibling": "node_22_1467833484410"
+
+
+    },
+
+
+    {
+
+
+      "type": "standard",
+
+
+      "output": {
+
+
+        "text": {
+
+
+          "values": [
+
+
+            "You're welcome. Just let me know if you need anything else",
+
+
+            "No problem. Just let me know if you need anything else",
+
+
+            "My pleasure. Just let me know if you need anything else"
+
+
+          ],
+
+
+          "selection_policy": "sequential"
+
+
+        }
+
+
+      },
+
+
+      "metadata": {},
+
+
+      "conditions": "#Thanks",
+
+
+      "digress_in": "does_not_return",
+
+
+      "dialog_node": "node_2_1468243505617",
+
+
+      "previous_sibling": "node_12_1468329566917"
+
+
+    },
+
+
+    {
+
+
+      "type": "frame",
+
+
+      "title": "I want to make an appointment",
+
+
+      "output": {},
+
+
+      "metadata": {
+
+
+        "fallback": "leave",
+
+
+        "_customization": {
+
+
+          "mcr": true
+
+
+        }
+
+
+      },
+
+
+      "conditions": "#Customer_Care_Appointments",
+
+
+      "digress_in": "does_not_return",
+
+
+      "dialog_node": "Reservation using slots",
+
+
+      "digress_out": "allow_all",
+
+
+      "previous_sibling": "Directions",
+
+
+      "digress_out_slots": "allow_all"
+
+
+    },
+
+
+    {
+
+
+      "type": "standard",
+
+
+      "title": "Where are you located?",
+
+
+      "output": {},
+
+
+      "metadata": {},
+
+
+      "next_step": {
+
+
+        "behavior": "skip_user_input"
+
+
+      },
+
+
+      "conditions": "#Customer_Care_Store_Location",
+
+
+      "digress_in": "does_not_return",
+
+
+      "dialog_node": "Directions",
+
+
+      "digress_out": "allow_all",
+
+
+      "previous_sibling": "Hours of Operation"
+
+
+    },
+
+
+    {
+
+
+      "type": "standard",
+
+
+      "output": {
+
+
+        "text": {
+
+
+          "values": [
+
+
+            "I didn't understand can you try again"
+
+
+          ],
+
+
+          "selection_policy": "sequential"
+
+
+        }
+
+
+      },
+
+
+      "metadata": {},
+
+
+      "conditions": "anything_else",
+
+
+      "digress_in": "returns",
+
+
+      "dialog_node": "node_2_1467831978407",
+
+
+      "digress_out": "allow_all",
+
+
+      "previous_sibling": "node_5_1589557930308",
+
+
+      "disambiguation_opt_out": true
+
+
+    },
+
+
+    {
+
+
+      "type": "standard",
+
+
+      "title": "Opening",
+
+
+      "output": {
+
+
+        "text": {
+
+
+          "values": [
+
+
+            "Hello, I’m a demo customer care virtual assistant to show you the basics.  I can help with directions to my store, hours of operation and booking an in-store appointment"
+
+
+          ],
+
+
+          "selection_policy": "sequential"
+
+
+        }
+
+
+      },
+
+
+      "context": {
+
+
+        "no_reservation": true
+
+
+      },
+
+
+      "metadata": {},
+
+
+      "conditions": "welcome",
+
+
+      "dialog_node": "Opening"
+
+
+    }
+
+
+  ],
+
+
+  "counterexamples": [],
+
+
+  "system_settings": {
+
+
+    "tooling": {
+
+
+      "store_generic_responses": true
+
+
+    },
+
+
+    "off_topic": {
+
+
+      "enabled": true
+
+
+    },
+
+
+    "disambiguation": {
+
+
+      "prompt": "Did you mean:",
+
+
+      "enabled": true,
+
+
+      "randomize": true,
+
+
+      "max_suggestions": 5,
+
+
+      "suggestion_text_policy": "title",
+
+
+      "none_of_the_above_prompt": "None of the above."
+
+
+    },
+
+
+    "system_entities": {
+
+
+      "enabled": true
+
+
+    },
+
+
+    "spelling_auto_correct": true
+
+
+  },
+
+
+  "learning_opt_out": false,
+
+
+  "name": "Customer Care Sample Skill",
+
+
+  "language": "en",
+
+
+  "description": "Sample simple customer service skill to get you started."
+
+
+
+
